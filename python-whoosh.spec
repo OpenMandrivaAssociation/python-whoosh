@@ -1,7 +1,7 @@
 %define tarname	Whoosh
 %define name	python-whoosh
 %define version 1.3.3
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Fast, pure Python full text indexing, search, and spell checking library
 Name:		%{name}
@@ -45,9 +45,14 @@ PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record
 sphinx-build -b html docs/source html
 %__rm -rf html/.buildinfo html/.doctrees
 
+chmod 644 *.txt
+chmod 644 %{buildroot}%{py_sitedir}/%{tarname}-%{version}-py%{py_ver}.egg-info/*
+
 %clean
 %__rm -rf %{buildroot}
 
 %files -f FILE_LIST
 %defattr(-,root,root)
 %doc *.txt html/
+
+

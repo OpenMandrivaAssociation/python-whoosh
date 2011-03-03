@@ -1,6 +1,6 @@
 %define tarname	Whoosh
 %define name	python-whoosh
-%define version 1.7.4
+%define version 1.7.6
 %define release %mkrel 1
 
 Summary:	Fast, pure Python full text indexing, search, and spell checking library

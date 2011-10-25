@@ -1,14 +1,14 @@
 %define tarname	Whoosh
 %define name	python-whoosh
-%define version 2.1.0
+%define version 2.3.0
 %define release %mkrel 1
 
 Summary:	Fast, pure Python full text indexing, search, and spell checking library
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source0:	%{tarname}-%{version}.tar.gz
-License:	Apache 2.0
+Source0:	http://pypi.python.org/packages/source/W/%{tarname}/%{tarname}-%{version}.tar.gz
+License:	BSD
 Group:		Development/Python
 Url:		http://pypi.python.org/pypi/Whoosh/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot

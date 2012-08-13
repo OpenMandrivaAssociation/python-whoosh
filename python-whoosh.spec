@@ -1,7 +1,12 @@
 %define tarname	Whoosh
 %define name	python-whoosh
-%define version 2.3.0
-%define release %mkrel 1
+%define version 2.4.1
+%define	rel		1
+%if %mdkversion < 201100
+%define release %mkrel %{rel}
+%else
+%define	release	%{rel}
+%endif
 
 Summary:	Fast, pure Python full text indexing, search, and spell checking library
 Name:		%{name}
@@ -41,7 +46,7 @@ Some of Whoosh's features include:
 
 %install
 %__rm -rf %{buildroot}
-PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILE_LIST
+PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot}
 PYTHONPATH=`dir -d build/lib*` sphinx-build -b html docs/source html
 %__rm -rf html/.buildinfo html/.doctrees
 
@@ -51,8 +56,8 @@ chmod 644 %{buildroot}%{py_sitedir}/%{tarname}-%{version}-py%{py_ver}.egg-info/*
 %clean
 %__rm -rf %{buildroot}
 
-%files -f FILE_LIST
+%files
 %defattr(-,root,root)
 %doc *.txt html/
-
-
+%py_sitedir/%{tarname}*
+%py_sitedir/whoosh*

@@ -61,3 +61,51 @@ chmod 644 %{buildroot}%{py_sitedir}/%{tarname}-%{version}-py%{py_ver}.egg-info/*
 %doc *.txt html/
 %py_sitedir/%{tarname}*
 %py_sitedir/whoosh*
+
+
+%changelog
+* Mon Aug 13 2012 Lev Givon <lev@mandriva.org> 2.4.1-1
++ Revision: 814629
+- Update to 2.4.1.
+
+* Tue Oct 25 2011 Lev Givon <lev@mandriva.org> 2.3.0-1
++ Revision: 707175
+- Update to 2.3.0.
+
+* Sun Aug 07 2011 Lev Givon <lev@mandriva.org> 2.1.0-1
++ Revision: 693550
+- Update to 2.1.0.
+
+* Wed Jun 22 2011 Lev Givon <lev@mandriva.org> 1.8.4-1
++ Revision: 686708
+- Update to 1.8.4.
+
+* Fri Apr 22 2011 Lev Givon <lev@mandriva.org> 1.8.2-1
++ Revision: 656687
+- Update to 0.8.2.
+
+* Fri Mar 04 2011 Lev Givon <lev@mandriva.org> 1.7.6-1
++ Revision: 641548
+- Update to 1.7.6.
+
+* Mon Feb 21 2011 Lev Givon <lev@mandriva.org> 1.7.4-1
++ Revision: 639159
+- Update to 1.7.4.
+
+* Thu Dec 16 2010 Lev Givon <lev@mandriva.org> 1.4.1-1mdv2011.0
++ Revision: 622413
+- Update to 1.4.1.
+
+* Fri Nov 12 2010 Lev Givon <lev@mandriva.org> 1.3.3-2mdv2011.0
++ Revision: 596746
+- Fix some file permissions.
+
+* Tue Nov 09 2010 Lev Givon <lev@mandriva.org> 1.3.3-1mdv2011.0
++ Revision: 595332
+- Update to 1.3.3.
+
+* Mon Nov 08 2010 Lev Givon <lev@mandriva.org> 1.3.2-1mdv2011.0
++ Revision: 595112
+- import python-whoosh
+
+

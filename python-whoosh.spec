@@ -8,7 +8,7 @@ Summary:	Fast, pure Python full text indexing, search, and spell checking librar
 
 Name:		python-whoosh
 Version:	2.6.0
-Release:	1
+Release:	2
 Source0:	http://pypi.python.org/packages/source/W/Whoosh/Whoosh-%{version}.zip
 License:	BSD
 Group:		Development/Python

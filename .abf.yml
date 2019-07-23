@@ -1,4 +1,2 @@
-removed_sources:
-  Whoosh-2.4.1.tar.gz: d82068a9788105913e3cd5e71360d26f4a3a20ca
 sources:
-  Whoosh-2.6.0.zip: 1127ce7bb62ea779def77d4784e55f1ee407a123
+  Whoosh-2.7.4.zip: b953ff93c10cf85362feeda4bb0dc2de6810153d

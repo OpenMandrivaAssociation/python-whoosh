@@ -1,59 +1,29 @@
-%define tarname	Whoosh
-%define	rel		1
-%if %mdkversion < 201100
-%else
-%endif
-
-Summary:	Fast, pure Python full text indexing, search, and spell checking library
-
+Summary:	Fast, pure-Python full text indexing, search, and spell checking library.
 Name:		python-whoosh
 Version:	2.7.4
-Release:	1
-Source0:	https://files.pythonhosted.org/packages/cc/b6/b8c5596ce96cc14af4e267db767533a72ba08dd04f8fa1f54cd14ba13133/Whoosh-2.7.4.zip
-License:	BSD
+Release:	2
+License:	Two-clause BSD license
 Group:		Development/Python
-Url:		http://pypi.python.org/pypi/Whoosh/
+URL:		https://pypi.org/project/whoosh/
+Source0:	https://files.pythonhosted.org/packages/source/W/Whoosh/Whoosh-%{version}.tar.gz
+BuildRequires:	python%{pyver}dist(pip)
 BuildArch:	noarch
-BuildRequires:	python-setuptools
-BuildRequires:	python-sphinx
 
 %description
-Whoosh is a fast, featureful full-text indexing and searching library
-implemented in pure Python. Programmers can use it to easily add
-search functionality to their applications and websites. Every part of
-how Whoosh works can be extended or replaced to meet your needs
-exactly.
-
-Some of Whoosh's features include:
-
-* Pythonic API.
-* Pure-Python. No compilation or binary packages needed, no mysterious
-  crashes.
-* Fielded indexing and search.
-* Fast indexing and retrieval -- faster than any other pure-Python,
-  scoring, full-text search solution I know of.
-* Pluggable scoring algorithm (including BM25F), text analysis,
-  storage, posting format, etc.
-* Powerful query language parsed by pyparsing.
-* Pure Python spell-checker (as far as I know, the only one).
+Fast, pure-Python full text indexing, search, and spell checking library.
 
 %prep
-%setup -q -n %{tarname}-%{version}
-
-%install
-PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot}
-PYTHONPATH=`dir -d build/lib*` sphinx-build -b html docs/source html
-%__rm -rf html/.buildinfo html/.doctrees
-
-chmod 644 *.txt
-chmod 644 %{buildroot}%{py_puresitedir}/%{tarname}-%{version}-py%{py_ver}.egg-info/*
-
-%clean
+%autosetup -p1 -n Whoosh-%{version}
 
 %files
-%doc *.txt html/
-%{py_puresitedir}/%{tarname}*
-%{py_puresitedir}/whoosh*
+%{py_sitedir}/whoosh
+%{py_sitedir}/Whoosh-*.*-info
 
+#----------------------------------------------------------------------
 
+%build
+%py_build
+
+%install
+%py_install
 

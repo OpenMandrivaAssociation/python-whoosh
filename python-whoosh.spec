@@ -3,7 +3,7 @@
 Summary:	Fast, pure-Python full text indexing, search, and spell checking library.
 Name:		python-whoosh
 Version:	2.7.5
-Release:	1
+Release:	2
 License:	BSD-2-Clause
 Group:		Development/Python
 # Original upstream is unmaintained:
@@ -17,7 +17,7 @@ BuildSystem:	python
 BuildArch:		noarch
 
 BuildRequires:	pkgconfig
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(cached-property)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
